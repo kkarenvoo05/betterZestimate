@@ -8,13 +8,25 @@ class RealEstatePortfolioEnv(gym.Env):
 
     def __init__(self, property_data_path, market_data_path, initial_cash=100_000_000, num_properties=5):
         super().__init__()
-        # Load property-level data
-        self.property_df = pd.read_csv(property_data_path, parse_dates=['date'])
+        # Load property-level data (tab-separated)
+        self.property_df = pd.read_csv(property_data_path, sep='\t', parse_dates=['date'])
         # Convert to monthly period for convenience
         self.property_df['year_month'] = self.property_df['date'].dt.to_period('M')
         
-        # Load market-level data
-        self.market_df = pd.read_csv(market_data_path)
+        # Load market-level data (try tab-separated first, then comma)
+        try:
+            self.market_df = pd.read_csv(market_data_path, sep='\t')
+            if self.market_df.empty:
+                raise ValueError("Market data file is empty")
+        except (pd.errors.EmptyDataError, ValueError, Exception):
+            try:
+                self.market_df = pd.read_csv(market_data_path)
+                if self.market_df.empty:
+                    raise ValueError("Market data file is empty")
+            except:
+                # Create empty market data structure if file doesn't exist or is empty
+                print(f"Warning: Could not load market data from {market_data_path}. Creating empty structure.")
+                self.market_df = pd.DataFrame(columns=['date', 'unemployment_rate', 'mortgage_rate', 'zillow_index', 'case_shiller_index'])
         # Convert market_df 'date' (YYYY-MM) to a Period
         self.market_df['year_month'] = self.market_df['date'].apply(lambda x: pd.Period(x, freq='M'))
 

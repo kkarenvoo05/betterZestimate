@@ -1,0 +1,16 @@
+Strategy,Period,Annualized Return (%),Total Return (%)
+re_portfolio_ppo_new_0.001_lr_long,2014-2017,8.36%,37.89%
+re_portfolio_ppo_new_0.001_lr_long,2018-2020,7.85%,25.46%
+re_portfolio_ppo_new_0.001_lr_long,2021-2024,14.73%,73.24%
+re_portfolio_ppo_new_0.001_lr,2014-2017,-0.53%,-2.11%
+re_portfolio_ppo_new_0.001_lr,2018-2020,-4.66%,-13.33%
+re_portfolio_ppo_new_0.001_lr,2021-2024,2.89%,12.08%
+re_portfolio_ppo_0.0001_lr,2014-2017,2.99%,12.49%
+re_portfolio_ppo_0.0001_lr,2018-2020,3.83%,11.94%
+re_portfolio_ppo_0.0001_lr,2021-2024,5.63%,24.51%
+Hold (Baseline),2014-2017,0.00%,0.00%
+Hold (Baseline),2018-2020,0.00%,0.00%
+Hold (Baseline),2021-2024,0.00%,0.00%
+Random (Baseline),2014-2017,-1.00%,-3.96%
+Random (Baseline),2018-2020,-3.56%,-10.30%
+Random (Baseline),2021-2024,2.09%,8.61%

@@ -1,0 +1,6 @@
+Strategy,Win Rate (%),Avg Profit/Sale,Total Sales
+re_portfolio_ppo_new_0.001_lr_long,53.73%,"$1,376,151",67
+re_portfolio_ppo_new_0.001_lr,55.56%,"$935,242",45
+re_portfolio_ppo_0.0001_lr,29.09%,"$125,776",55
+Hold (Baseline),0.00%,$0,0
+Random (Baseline),34.69%,"$-178,659",49
